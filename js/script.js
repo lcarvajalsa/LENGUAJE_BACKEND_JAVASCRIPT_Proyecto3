@@ -1,17 +1,20 @@
 const deg = 6;
 
-const hora = document.querySelector('hora');
-const minutos = document.querySelector('minutos');
-const segundos = document.querySelector('segundos');
+const hora = document.querySelector('.hora');
+const minuto = document.querySelector('.minuto');
+const segundo = document.querySelector('.segundo');
 
-setInterval(()=>{
+setInterval(() => {
+
     let tiempo = new Date();
+    
+    // los valores de 30 y deg corresponden a los grados de la circunferencia 
+    let hr = tiempo.getHours() * 30; 
+    let min = tiempo.getMinutes() * deg;
+    let seg = tiempo.getSeconds() * deg;
 
-    let hr =tiempo.getHours() * 30;
-    let min =tiempo.getMinutes() * seg;
-    let seg =tiempo.getSeconds() * seg;
+    hora.style.transform = `rotate(${(hr)+(min/12)}deg)`;
+    minuto.style.transform = `rotate(${min}deg)`;
+    segundo.style.transform = `rotate(${seg}deg)`;
 
-    horas.style.transform = `rotate(${(hr)+(min/12)}deg)`;
-    minutos.style.transform = `rotate(${min}deg)`;
-    segundos.style.transform = `rotate(${seg}deg)`;
 })

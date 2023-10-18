@@ -1,22 +1,88 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: aquamarine;
+}
+
+.contenedor{
+    width: 350px;
+    height: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("../img/reloj.png");
+    background-size:cover;
+    border: 0.5rem solid blanchedalmond;
+    border-radius: 50vh ;
+    /* 1er parametro, eje x, 2do parametro eje y, 3er parametro difuminacion, 4to parametro tamaño de la sobra */
+    box-shadow: inset 0px 0px 20px 5px chocolate;   
+}
+
+/* before nos sirve para dibujar elemntos dentro del html desde el css */
+.contenedor::before{
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: darkgray;
+    border-radius: 50vh;
+    z-index: 100;
+}
+
+.hora{
+    width: 140px;
+    height: 140px;
+}
+
 .hora::before{
     content: '';
     position: absolute;
     width: 8px;
-    height: 100px;
-    background: crimson;
+    height: 90px;
+    background-color:fuchsia;
+    z-index: 10;
+    border-radius: 50vh;
+}
+
+.minuto{
+    width: 250px;
+    height: 220px;
+}
+
+.minuto::before{
+    content: '';
+    position: absolute;
+    width: 5px;
+    height: 130px;
+    background-color:goldenrod;
     z-index: 11;
     border-radius: 50vh;
 }
+
+.segundo{
+    width: 250px;
+    height: 250px;
+}
+
 .segundo::before{
     content: '';
     position: absolute;
     width: 1.8px;
     height: 150px;
-    background: aqua;
+    background-color: honeydew;
     z-index: 12;
     border-radius: 50vh;
 }
-.hora, .minuto, .segundo {
+
+.hora,.minuto,.segundo{
     display: flex;
     justify-content: center;
     position: absolute;
